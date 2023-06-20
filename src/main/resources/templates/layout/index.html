@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org" th:fragment="dynamic(main)">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<title>Document</title>
+</head>
+<body ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
+	<header class="row">
+	<div th:replace="/layout/header.html"></div>
+	</header>
+	<nav class="row">
+		<div th:replace="/layout/_menu.html"></div>
+	</nav>
+
+	<div class="row">
+		<article class="col-sm-9">
+			<div th:replace="${main}"></div>
+		</article>
+		<aside class="col-sm-3">
+			<div th:replace="/layout/_cart-info.html"></div>
+			<div th:replace="/layout/_category.html"></div>
+		</aside>
+	</div>
+
+	<iframe
+		src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d62698.48386670732!2d106.57227610075988!3d10.837673623602512!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x31752bee0b0ef9e5%3A0x5b4da59e47aa97a8!2zY8O0bmcgdmnDqm4gcGjhuqduIG3hu4FtIHF1YW5nIHRydW5nIHF14bqtbiAxMiB0cC5oY20!3m2!1d10.8538211!2d106.6278284!5e0!3m2!1sen!2s!4v1658539089518!5m2!1sen!2s"
+		width="100%" height="450" style="border: 0;" allowfullscreen=""
+		loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+	<footer class="footer-08" style="background-color: black;">
+		<div class="container-fluid px-lg-12">
+			<div class="row">
+				<div class="col-md-9 py-5">
+					<div class="row">
+						<div class="col-md-4 mb-md-0 mb-4">
+							<h2 class="footer-heading" style="color: white">About us</h2>
+							<p style="color: white">A small river named Duden flows by
+								their place and supplies it with the necessary regelialia.</p>
+							<iframe
+								src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FN%25C3%25B4ng-S%25E1%25BA%25A3n-Vi%25E1%25BB%2587t-104081945730748&tabs=timeline&width=340&height=128&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=true&appId=479139456796360"
+								width="340" height="128" style="border: none; overflow: hidden"
+								scrolling="no" frameborder="0" allowfullscreen="true"
+								allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+						</div>
+						<div class="col-md-8">
+							<div class="row justify-content-center">
+								<div class="col-md-12 col-lg-9">
+									<div class="row">
+										<div class="col-md-4 mb-md-0 mb-4">
+											<h2 class="footer-heading" style="color: white">Policy</h2>
+											<ul class="list-unstyled">
+												<li><a href="#" class="py-1 d-block">Order support</a></li>
+												<li><a href="#" class="py-1 d-block">Return Policy</a></li>
+												<li><a href="#" class="py-1 d-block">Warranty
+														Policy</a></li>
+												<li><a href="#" class="py-1 d-block">User Policy</a></li>
+												<li><a href="#" class="py-1 d-block">Purchase
+														Policy</a></li>
+											</ul>
+										</div>
+										<div class="col-md-4 mb-md-0 mb-4">
+											<h2 class="footer-heading" style="color: white">About</h2>
+											<ul class="list-unstyled">
+												<li><a href="#" class="py-1 d-block">Staff</a></li>
+												<li><a href="#" class="py-1 d-block">Team</a></li>
+												<li><a href="#" class="py-1 d-block">Careers</a></li>
+												<li><a href="#" class="py-1 d-block">Blog</a></li>
+											</ul>
+										</div>
+										<div class="col-md-4 mb-md-0 mb-4">
+											<h2 class="footer-heading" style="color: white">Resources</h2>
+											<ul class="list-unstyled">
+												<li><a href="#" class="py-1 d-block">Security</a></li>
+												<li><a href="#" class="py-1 d-block">Global</a></li>
+												<li><a href="#" class="py-1 d-block">Charts</a></li>
+												<li><a href="#" class="py-1 d-block">Privacy</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-md-5">
+						<div class="col-md-12">
+							<p class="copyright">
+								<br> <br> <br> <br> Copyright &copy;
+								<script>
+									document.write(new Date().getFullYear());
+								</script>
+								All rights reserved | This template is made with <i
+									class="ion-ios-heart" aria-hidden="true"></i> by <a
+									href="https://www.facebook.com/ADuyPham988D/" target="_blank">Phạm
+									Anh Duy</a>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 py-md-5 py-4 aside-stretch-right pl-lg-5">
+					<h2 class="footer-heading footer-heading-white"
+						style="color: white">Contact us</h2>
+					<form action="#" class="contact-form">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Your Name">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Your Email">
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Subject">
+						</div>
+						<div class="form-group">
+							<textarea name="" id="" cols="30" rows="3" class="form-control"
+								placeholder="Message"></textarea>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="form-control submit px-3">
+								<i class="far fa-paper-plane"></i>&ensp;Send
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+<script type="text/javascript">
+	const app = angular.module("shopping-cart-app", []);
+	/* Xử lý giỏ hàng */
+	app.controller("shopping-cart-ctrl", function($scope, $http) {
+		$scope.cart = {
+			items: [],
+				/* Thêm vào giỏ hàng */
+				add(id){
+				/* Kiểm tra giỏ hàng có mã số không */
+				/* Nếu có thì tăng số lượng -> Lưu */
+				var item = this.items.find(item =>item.id == id);
+				if(item){
+					item.qty++;
+					this.saveToLocalStorage();
+					
+				}else {	/* Ngược lại nếu không thì  -> Lưu */
+					$http.get(`/rest/products/${id}`).then(resp => {
+						resp.data.qty = 1;
+						this.items.push(resp.data);
+						this.saveToLocalStorage();
+						
+					})
+				}
+				alert("Đã thêm sản phẩm " + id + " vào giỏ hàng")
+				},
+				/* Xóa sản phẩm trong giỏ hàng */
+				remove(id){
+					var index = this.items.findIndex(item => item.id == id);
+					this.items.splice(index, 1);
+					this.saveToLocalStorage();
+				},
+				/* Xóa tất cả sản phẩm trong giỏ hàng */
+				clear(){
+					this.items = []
+					this.saveToLocalStorage();
+				},
+				/*Tính tổng số lượng các mặt hàng trong giỏ */
+				get count(){
+				return this.items
+				.map(item => item.qty)
+				.reduce((total, qty) => total += qty, 0);
+				},
+				/*Tính tổng thành tiền có trong giỏ */
+				get amount(){
+					return this.items
+					.map(item => item.qty *item.price)
+					.reduce((total, qty) => total += qty,0);
+				},
+				/* Lưu giỏ hàng vào LocalStorage */
+				saveToLocalStorage(){
+				var json = JSON.stringify(angular.copy(this.items));
+				localStorage.setItem("cart", json);
+				},
+				/* Tải mặt hàng lưu bộ nhớ khi thêm vào giỏ hàng */
+				loadFromLocalStorage(){
+					var json = localStorage.getItem("cart");
+					this.items = json ? JSON.parse(json): [];
+				}
+				
+		}
+				$scope.cart.loadFromLocalStorage();
+		
+				/* Đặt hàng */
+				$scope.order = {
+					createDate: new Date(),
+					address: "",
+					account: {username :$("#username").text()},
+					get orderDetails() { /* Đọc toàn bộ mặt hàng trong giỏ hàng */
+						return $scope.cart.items.map(item => {
+							return {
+								product: {id: item.id}, /* Duyệt qua các mặt hàng trong giỏ hàng - Các mặt hàng trong giỏ thành order detail */
+								price: item.price,
+								quantity: item.qty
+							}
+						});
+					},
+					purchase() {
+						var order = angular.copy(this); /* Lấy thông tin của giỏ hàng */
+						/* Thực hiện đặt sản phẩm */
+						$http.post("/rest/orders", order).then (resp => { /* Địa chỉ để đặt hàng */
+							alert("Đặt hàng thành công");
+							$scope.cart.clear();	/* Đặt hàng xong xóa các sản phẩm trong giỏ - chỉ tồn tại trong đơn đặt hàng */
+							location.href = "/order/detail/" + resp.data.id;
+						}).catch(error => {
+							alert("Đặt hàng không thành công ! Vui lòng thử lại")
+							console.log(error)
+						})
+					}
+				}
+	})
+	
+	
+</script>
+</html>

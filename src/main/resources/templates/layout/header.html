@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="https://www.thymeleaf.org" th:fragment="dynamic(main)">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link href="../css/header/header.css">
+<title>Document</title>
+</head>
+
+<body ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
+	<div class="header-top">
+		<div class="container">
+			<div class="ht-left">
+				<div class="mail-service">
+					<i class=" fa fa-envelope"></i> abc@gmail.com
+				</div>
+				<div class="phone-service">
+					<i class=" fa fa-phone"></i> 0382596200
+				</div>
+			</div>
+<ul class="nav navbar-nav">
+				<li> <a th:href="@{/}">Trang Chủ</a> </li>
+				<th:block th:if="${#request.remoteUser}">
+					<li> <a th:href="@{/security/logoff}">Đăng Xuất</a> </li>
+					<li> <a th:href="@{/order/list}">Danh Sách Đơn Hàng</a> </li>
+					<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}"> <a th:href="@{/admin/home/index}">Administarion</a> </li>
+				</th:block>
+				<th:block th:unless="${#request.remoteUser}">
+					<li> <a th:href="@{/security/login/form}">Đăng Nhập</a> </li>	
+				</th:block>
+			</ul>
+			<ul th:if="${#request.remoteUser}" class="nav navbar-nav navbar-right">
+				<li> <a href="#">Xin chào: [[${#request.remoteUser}]]</a> </li>	
+			</ul>
+		</div>
+	</div>
+</body>

@@ -1,0 +1,20 @@
+<div xmlns="https://www.thymeleaf.org">
+	<nav class="navbar navbar-inverse" style="font-variant: small-caps;">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+				<li> <a th:href="@{/}">Trang Chủ</a> </li>
+				<th:block th:if="${#request.remoteUser}">
+					<li> <a th:href="@{/security/logoff}">Đăng Xuất</a> </li>
+					<li> <a th:href="@{/order/list}">Danh Sách Đơn Hàng</a> </li>
+					<li th:if="${#request.isUserInRole('DIRE') or #request.isUserInRole('STAF')}"> <a th:href="@{/admin/home/index}">Administarion</a> </li>
+				</th:block>
+				<th:block th:unless="${#request.remoteUser}">
+					<li> <a th:href="@{/security/login/form}">Đăng Nhập</a> </li>	
+				</th:block>
+			</ul>
+			<ul th:if="${#request.remoteUser}" class="nav navbar-nav navbar-right">
+				<li> <a href="#">Xin chào: [[${#request.remoteUser}]]</a> </li>	
+			</ul>
+		</div>
+	</nav>
+</div>
